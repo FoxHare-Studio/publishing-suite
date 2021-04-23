@@ -1,0 +1,26 @@
+{% extends "dashboard/base.html" %}
+{% load mathfilters static %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+<div class="columns">
+	<div class="column">
+		<table class="table">
+			<thead>
+				<th>Product</th>
+				<th>Edit</th>
+			</thead>
+			
+			{% for p in object_list %}
+			<tr>
+				<td><a href="/detail/{{ p.id }}">{{ p.item_name }}</a></td>
+				<td><a href="/admin/inventory/product/{{ p.id }}/change/" target="edit">
+					<img class="export_button" src="{% static 'assets/img/edit.svg' %}" title="Edit Product">
+				</a></td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</div>
+{% endblock %}

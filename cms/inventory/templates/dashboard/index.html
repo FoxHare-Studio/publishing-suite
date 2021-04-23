@@ -1,0 +1,22 @@
+{% extends "dashboard/base.html" %}
+{% load static %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="columns">
+	<div class="column">
+		<h2 class="title is-2">Latest Products</h2>
+		<table class="table">
+			<thead>
+				<td>Product</td>
+			</thead>
+			{% for p in products %}
+			<tr>
+				<td>{{ p.item_name }}</td	>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</div>
+{% endblock %}
